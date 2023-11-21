@@ -1,22 +1,21 @@
 package ie.atu;
-
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-public class Main {
+public class FileWriter1 {
 
     public static void main(String[] args) {
 
         String fileName = "File13.txt";
-
         File myFile = new File(fileName);
+        String data = "Test File String2";
 
         try {
-            if (myFile.createNewFile()) {
-                System.out.println("File created successfully at " + myFile.getAbsolutePath());
-            }
-            else {
-                System.out.println("File already exists at " + myFile.getAbsolutePath());
-            }
+            FileWriter output =  new FileWriter("File13.txt");
+
+            output.write(data);
+            System.out.println("String created successfully at " + myFile.getAbsolutePath());
+            output.close();
         }
         catch (IOException e) {
             System.out.println("An error occurred while creating the file.");
