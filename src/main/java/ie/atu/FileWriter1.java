@@ -11,7 +11,7 @@ public class FileWriter1 {
         String data = "Test File String2";
 
         try {
-            FileWriter output =  new FileWriter("File13.txt");
+            FileWriter output =  new FileWriter(fileName, true);
 
             output.write(data);
             System.out.println("String created successfully at " + myFile.getAbsolutePath());
